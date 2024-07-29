@@ -3,7 +3,9 @@ function showSection(sectionId) {
     sections.forEach(section => section.classList.remove('active'));
 
     const activeSection = document.getElementById(sectionId);
-    activeSection.classList.add('active');
+    if (activeSection) {
+        activeSection.classList.add('active');
+    }
 }
 
 function updateGreeting() {
@@ -43,11 +45,12 @@ function updateGreeting() {
 function handleCommandInput(event) {
     if (event.key === 'Enter') {
         const inputElement = document.getElementById('cmd-input');
-        const command = inputElement.textContent.trim();
-        inputElement.textContent = '';
+        const command = inputElement.value.trim(); // Use value instead of textContent
+        inputElement.value = ''; // Clear input field
 
         // Map of commands to section IDs
         const commandMap = {
+            'home': 'home',
             'about': 'about',
             'work': 'work',
             'skills': 'skills',
@@ -58,6 +61,8 @@ function handleCommandInput(event) {
         const sectionId = commandMap[command.toLowerCase()];
         if (sectionId) {
             showSection(sectionId);
+        } else {
+            console.log('Command not recognized:', command);
         }
 
         // Reset the command input prompt
@@ -66,7 +71,7 @@ function handleCommandInput(event) {
 }
 
 // Add event listener for the Enter key
-document.addEventListener('keydown', handleCommandInput);
+document.getElementById('cmd-input').addEventListener('keydown', handleCommandInput);
 
 // Function to create a blinking cursor effect
 function startBlinkingCursor() {
@@ -81,7 +86,6 @@ window.addEventListener('load', () => {
     updateGreeting();
     startBlinkingCursor();
 });
-
 
 function openModal(modalId) {
     document.getElementById(modalId).style.display = 'flex';
