@@ -504,6 +504,41 @@ body {
     color: #f55;
 }
 
+
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.skill-category {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.skill-category h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.skill-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-icon {
+    width: 48px; /* Adjust size as needed */
+    height: 48px;
+    transition: transform 0.3s;
+}
+
+.skill-icon:hover {
+    transform: scale(1.1);
+}
+
 @media (max-width: 600px) {
     .experience-map {
         flex-direction: column;
