@@ -539,6 +539,125 @@ body {
     transform: scale(1.1);
 }
 
+
+#projects {
+    padding: 30px;
+    background: #f0f4f8; /* Light, neumorphic background */
+}
+
+.section-header {
+    font-size: 26px;
+    margin-bottom: 25px;
+    color: #222;
+    text-align: center;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.neumo-card {
+    background: #e0e5ec; /* Light neumorphic background */
+    border-radius: 12px;
+    box-shadow: 8px 8px 16px #b1b5c3, -8px -8px 16px #ffffff;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.neumo-card:hover {
+    box-shadow: inset 4px 4px 8px #b1b5c3, inset -4px -4px 8px #ffffff;
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-content h3 {
+    font-size: 20px;
+    margin: 0;
+    color: #333;
+}
+
+.card-content p {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #555;
+}
+.view-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #ffffff;
+    background: #007bff;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.view-button:hover {
+    background: #0056b3;
+}
+
+.link-highlight {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.link-highlight:hover {
+    text-decoration: underline;
+}
+
+
+/* Contact Section */
+#contact {
+    padding: 30px;
+    background: #f0f4f800;
+    text-align: center;
+}
+
+.section-header {
+    font-size: 26px;
+    margin-bottom: 25px;
+    color: #222;
+}
+
+.envelopes-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.envelope-card {
+    width: 150px;
+    height: 100px;
+    background: #e0e5ec;
+    color: #333;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    position: relative;
+}
+
+.envelope-card:hover {
+    transform: translateY(-10px) rotate(-2deg);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.envelope-label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
 @media (max-width: 600px) {
     .experience-map {
         flex-direction: column;
